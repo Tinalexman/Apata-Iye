@@ -12,7 +12,7 @@ import { motion } from "framer-motion";
 
 const Facilities = () => {
   return (
-    <div className="w-full flex flex-col lg:py-20 bg-background">
+    <div className="w-full flex flex-col lg:pt-10 bg-background">
       <h3 className="text-primary font-lato font-bold text-[0.8rem] leading-[1.2rem] lg:ml-[7rem]">
         FACILITIES GALLERY
       </h3>

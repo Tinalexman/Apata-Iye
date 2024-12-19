@@ -62,7 +62,7 @@ const Navbar: FC<{ active?: number }> = ({ active = 0 }) => {
             })}
           </div>
         </div>
-        <button className="py-1 border-primary hover:bg-primary hover:text-white duration-300 ease-out transition-colors border rounded-[16px] text-[0.9rem] font-lato text-primary px-4">
+        <button className="py-1 border-primary hover:bg-primary hover:text-white duration-300 ease-out transition-colors border rounded-xl text-[0.9rem] font-lato text-primary px-4">
           BOOK NOW
         </button>
       </div>
