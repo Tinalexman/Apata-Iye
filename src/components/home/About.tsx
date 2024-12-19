@@ -41,7 +41,7 @@ const About = () => {
                 key={i}
                 src={im}
                 alt="about us"
-                className="size-[120px] border-2 border-[#60A5FA] rounded-md"
+                className="size-[120px] object-cover border-[3px] border-[#60A5FA] rounded-md"
               />
             );
           })}
