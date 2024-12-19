@@ -9,9 +9,6 @@ import Image, { StaticImageData } from "next/image";
 import I1 from "@/public/ambulance.svg";
 import I2 from "@/public/briefcase.svg";
 import I3 from "@/public/chat_bubble.svg";
-import I4 from "@/public/pregnant_woman.svg";
-import I5 from "@/public/magnifying_glass.svg";
-import I6 from "@/public/test_tubes.svg";
 
 interface iTestimonial {
   image: StaticImageData;
