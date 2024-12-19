@@ -31,7 +31,7 @@ export default {
         nunito: ["var(--font-nunito)", "sans-serif"],
       },
       boxShadow: {
-        custom: "0px 0px 5px rgba(0, 0, 0, 0.1)",
+        custom: "0px 0px 5px rgba(0, 0, 0, 0.15)",
       },
     },
   },

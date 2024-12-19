@@ -65,12 +65,12 @@ const Services = () => {
   ];
 
   return (
-    <div className="w-full lg:h-[100vh] flex flex-col gap-6 items-center bg-background lg:px-[7rem] lg:py-20">
+    <div className="w-full flex flex-col gap-6 items-center bg-background lg:px-[7rem] lg:py-20">
       <h3 className="text-primary font-lato font-bold text-[0.8rem] leading-[1.2rem]">
         OUR SERVICES
       </h3>
       <div className="w-full flex flex-col gap-10 items-center" ref={targetRef}>
-        <div className="lg:space-y-3 w-full">
+        <div className="lg:space-y-3 w-full flex flex-col items-center">
           <h2 className="text-sh-2 font-nunito font-bold text-2xl text-center w-[20rem]">
             Delivering <span className="text-primary">Exceptional Care,</span>{" "}
             Every Step of the Way
@@ -80,6 +80,41 @@ const Services = () => {
             unique health needs. With a team of experienced health workers, we
             offer services that focus on your well-being every step of the way
           </p>
+        </div>
+        <div className="w-full gap-6 grid grid-cols-3">
+          {services.map((s, i) => {
+            return (
+              <motion.div
+                key={i}
+                animate={{
+                  y: isInView ? "0%" : "20%",
+                  opacity: isInView ? 1 : 0,
+                }}
+                transition={{
+                  duration: 1,
+                  ease: "easeOut",
+                  delay: i * 0.2,
+                  type: "spring",
+                  bounce: 0.6,
+                }}
+                className="w-full lg:h-[12.5rem] bg-white rounded-lg shadow-custom p-4 flex flex-col gap-6"
+              >
+                <Image
+                  src={s.image}
+                  alt="service image"
+                  className="size-[40px]"
+                  width={40}
+                  height={40}
+                />
+                <div className="space-y-3">
+                  <h2 className="text-sh-2 text-lg font-lato font-semibold">
+                    {s.title}
+                  </h2>
+                  <p className="text-sh-3 text-sm">{s.description}</p>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </div>
