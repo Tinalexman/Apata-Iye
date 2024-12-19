@@ -97,7 +97,7 @@ const Services = () => {
                   type: "spring",
                   bounce: 0.6,
                 }}
-                className="w-full lg:h-[12.5rem] bg-white rounded-lg shadow-custom p-4 flex flex-col gap-6"
+                className="w-full lg:h-[12.5rem] bg-white rounded-xl shadow-custom p-4 flex flex-col gap-6"
               >
                 <Image
                   src={s.image}
