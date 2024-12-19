@@ -97,7 +97,7 @@ const Services = () => {
                   type: "spring",
                   bounce: 0.6,
                 }}
-                className="w-full lg:h-[12.5rem] bg-white rounded-xl shadow-custom p-4 flex flex-col gap-6"
+                className="w-full lg:h-[12.5rem] font-lato bg-white rounded-xl shadow-custom p-4 flex flex-col gap-6"
               >
                 <Image
                   src={s.image}
@@ -107,7 +107,7 @@ const Services = () => {
                   height={40}
                 />
                 <div className="space-y-3">
-                  <h2 className="text-sh-2 text-lg font-lato font-semibold">
+                  <h2 className="text-sh-2 text-lg  font-semibold">
                     {s.title}
                   </h2>
                   <p className="text-sh-3 text-sm">{s.description}</p>

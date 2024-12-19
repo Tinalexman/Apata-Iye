@@ -1,6 +1,9 @@
 import Link from "next/link";
 import React, { FC } from "react";
 
+import Image from "next/image";
+import Logo from "@/public/logo.svg";
+
 interface iNav {
   name: string;
   link: string;
@@ -31,16 +34,25 @@ const Navbar: FC<{ active?: number }> = ({ active = 0 }) => {
       <div className="w-full h-10 bg-primary" />
       <div className="w-full flex h-full items-center justify-between lg:px-[7rem] bg-white">
         <div className="w-fit flex gap-32 items-center">
-          <div className="flex flex-col w-fit font-lato">
-            <h2 className="font-extrabold text-primary text-[1.35rem] leading-[1.4rem]">
-              APATA-IYE
-            </h2>
-            <p className="text-secondary font-semibold text-[0.6rem] leading-[0.8rem]">
-              CLINIC AND MATERNITY
-            </p>
-            <p className="text-primary text-[0.5rem] ">
-              ...to God and Humanity
-            </p>
+          <div className="w-fit gap-3 items-center flex">
+            <Image
+              src={Logo}
+              alt="logo"
+              width={42}
+              height={42}
+              className="size-12"
+            />
+            <div className="flex flex-col w-fit font-lato">
+              <h2 className="font-extrabold text-primary text-[1.35rem] leading-[1.4rem]">
+                APATA-IYE
+              </h2>
+              <p className="text-secondary font-semibold text-[0.6rem] leading-[0.8rem]">
+                CLINIC AND MATERNITY
+              </p>
+              <p className="text-primary text-[0.5rem] ">
+                ...to God and Humanity
+              </p>
+            </div>
           </div>
           <div className="w-fit flex gap-6 items-center font-lato">
             {navs.map((nv, i) => {

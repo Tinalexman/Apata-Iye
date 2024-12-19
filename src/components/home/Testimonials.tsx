@@ -51,7 +51,10 @@ const Testimonials = () => {
   ];
 
   return (
-    <div className="w-full flex flex-col gap-6 items-center bg-background lg:px-[7rem] lg:py-20">
+    <div
+      id="testimonials"
+      className="w-full flex flex-col gap-6 items-center bg-background lg:px-[7rem] lg:py-20"
+    >
       <h3 className="text-primary font-lato font-bold text-[0.8rem] leading-[1.2rem]">
         TESTIMONIALS
       </h3>
@@ -83,7 +86,7 @@ const Testimonials = () => {
                   type: "spring",
                   bounce: 0.6,
                 }}
-                className="w-full lg:h-[18rem] bg-white rounded-tl-2xl rounded-tr rounded-bl rounded-br-2xl shadow-custom p-4 flex flex-col gap-4"
+                className="w-full lg:h-[18rem] font-lato bg-white rounded-tl-2xl rounded-tr rounded-bl rounded-br-2xl shadow-custom p-4 flex flex-col gap-4"
               >
                 <div className="w-full flex gap-2 items-center">
                   <Image
@@ -94,7 +97,7 @@ const Testimonials = () => {
                     height={40}
                   />
                   <div className="">
-                    <h2 className="text-primary text-lg font-lato font-semibold">
+                    <h2 className="text-primary text-lg font-semibold">
                       {t.name}
                     </h2>
                     <p className="text-secondary text-xs">{t.role}</p>

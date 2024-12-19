@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 
 import Image from "next/image";
 
@@ -8,11 +8,17 @@ import I2 from "@/public/img_2.jpg";
 import I3 from "@/public/img_3.jpg";
 import I4 from "@/public/img_4.jpg";
 
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 
 const Facilities = () => {
+  const target = useRef(null);
+  const inView = useInView(target, { amount: "some" });
   return (
-    <div className="w-full flex flex-col lg:pt-10 bg-background">
+    <div
+      id="facilities"
+      ref={target}
+      className="w-full flex flex-col lg:pt-10 bg-background"
+    >
       <h3 className="text-primary font-lato font-bold text-[0.8rem] leading-[1.2rem] lg:ml-[7rem]">
         FACILITIES GALLERY
       </h3>
@@ -35,7 +41,7 @@ const Facilities = () => {
             <motion.div
               key={i}
               animate={{
-                y: [i % 2 == 0 ? "-20%" : "20%", "0%"],
+                y: !inView ? (i % 2 == 0 ? "-20%" : "20%") : "0%",
               }}
               transition={{
                 duration: 1,
