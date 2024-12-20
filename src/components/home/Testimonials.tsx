@@ -50,24 +50,24 @@ const Testimonials = () => {
   return (
     <div
       id="testimonials"
-      className="w-full flex flex-col gap-6 items-center bg-background lg:px-[7rem] lg:py-20"
+      className="w-full flex flex-col gap-6 items-center bg-background xs:px-[5%] lg:px-[7rem] lg:py-20 xs:py-10"
     >
-      <h3 className="text-primary font-lato font-bold text-[0.8rem] leading-[1.2rem]">
+      <h3 className="text-primary font-lato font-bold xs:text-[0.5rem] lg:text-[0.8rem] xs:leading-[0.8rem] lg:leading-[1.2rem]">
         TESTIMONIALS
       </h3>
       <div className="w-full flex flex-col gap-10 items-center" ref={targetRef}>
         <div className="lg:space-y-3 w-full flex flex-col items-center">
-          <h2 className="text-sh-2 font-nunito font-bold text-2xl text-center w-[20rem]">
+          <h2 className="text-sh-2 font-nunito font-bold xs:text-lg lg:text-2xl text-center w-[20rem] xs:w-full">
             Your Health, Our Mission:{" "}
             <span className="text-primary">Hear From Others</span>
           </h2>
-          <p className="text-sh-3 text-xs w-[40rem] text-center">
+          <p className="text-sh-3 text-xs lg:w-[40rem] xs:w-full text-center">
             Discover heartfelt stories and inspiring testimonials from patients
             who have experienced our unwavering commitment to their health,
             well-being, and exceptional care.
           </p>
         </div>
-        <div className="w-full gap-6 grid grid-cols-3">
+        <div className="w-full gap-6 grid lg:grid-cols-3 grid-cols-1">
           {testimonials.map((t, i) => {
             return (
               <motion.div
@@ -83,7 +83,7 @@ const Testimonials = () => {
                   type: "spring",
                   bounce: 0.6,
                 }}
-                className="w-full lg:h-[18rem] font-lato bg-white rounded-tl-2xl rounded-tr rounded-bl rounded-br-2xl shadow-custom p-4 flex flex-col gap-4"
+                className="w-full lg:h-[18rem] xs:h-auto font-lato bg-white rounded-tl-2xl rounded-tr rounded-bl rounded-br-2xl shadow-custom p-4 flex flex-col gap-4"
               >
                 <div className="w-full flex gap-2 items-center">
                   <Image
@@ -94,14 +94,16 @@ const Testimonials = () => {
                     height={40}
                   />
                   <div className="">
-                    <h2 className="text-primary text-lg font-semibold">
+                    <h2 className="text-primary xs:text-sm lg:text-lg font-semibold">
                       {t.name}
                     </h2>
-                    <p className="text-secondary text-xs">{t.role}</p>
+                    <p className="text-secondary lg:text-xs xs:text-[0.5rem]">
+                      {t.role}
+                    </p>
                   </div>
                 </div>
-                <p className="text-sh-3 text-sm">{t.content}</p>
-                <p className="text-primary text-5xl font-bold font-nunito text-end">
+                <p className="text-sh-3 lg:text-sm xs:text-xs">{t.content}</p>
+                <p className="text-primary lg:text-5xl xs:text-3xl font-bold font-nunito text-end">
                   “
                 </p>
               </motion.div>

@@ -4,6 +4,8 @@ import React, { FC } from "react";
 import Image from "next/image";
 import Logo from "@/public/logo.svg";
 
+import { IoMdMenu } from "react-icons/io";
+
 interface iNav {
   name: string;
   link: string;
@@ -32,7 +34,7 @@ const Navbar: FC<{ active?: number }> = ({ active = 0 }) => {
   return (
     <nav className="w-full h-[6rem] flex flex-col sticky top-0 z-10 shadow-custom">
       <div className="w-full h-10 bg-primary" />
-      <div className="w-full flex h-full items-center justify-between lg:px-[7rem] bg-white">
+      <div className="w-full flex h-full items-center justify-between xs:px-[5%] lg:px-[7rem] bg-white">
         <div className="w-fit flex gap-32 items-center">
           <div className="w-fit gap-3 items-center flex">
             <Image
@@ -42,7 +44,7 @@ const Navbar: FC<{ active?: number }> = ({ active = 0 }) => {
               height={42}
               className="size-12"
             />
-            <div className="flex flex-col w-fit font-lato">
+            <div className="flex flex-col w-fit font-lato xs:hidden lg:block">
               <h2 className="font-extrabold text-primary text-[1.35rem] leading-[1.4rem]">
                 APATA-IYE
               </h2>
@@ -54,7 +56,7 @@ const Navbar: FC<{ active?: number }> = ({ active = 0 }) => {
               </p>
             </div>
           </div>
-          <div className="w-fit flex gap-6 items-center font-lato">
+          <div className="w-fit flex gap-6 items-center font-lato xs:hidden lg:flex">
             {navs.map((nv, i) => {
               return (
                 <div key={i} className="flex flex-col ">
@@ -74,9 +76,10 @@ const Navbar: FC<{ active?: number }> = ({ active = 0 }) => {
             })}
           </div>
         </div>
-        <button className="py-1 border-primary hover:bg-primary hover:text-white duration-300 ease-out transition-colors border rounded-xl text-[0.9rem] font-lato text-primary px-4">
+        <button className="xs:hidden lg:block py-1 border-primary hover:bg-primary hover:text-white duration-300 ease-out transition-colors border rounded-xl text-[0.9rem] font-lato text-primary px-4">
           BOOK NOW
         </button>
+        <IoMdMenu className="lg:hidden xs:block cursor-pointer text-2xl" />
       </div>
     </nav>
   );

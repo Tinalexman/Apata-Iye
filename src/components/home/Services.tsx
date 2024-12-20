@@ -65,23 +65,23 @@ const Services = () => {
   ];
 
   return (
-    <div className="w-full flex flex-col gap-6 items-center bg-background lg:px-[7rem] lg:py-20">
-      <h3 className="text-primary font-lato font-bold text-[0.8rem] leading-[1.2rem]">
+    <div className="w-full flex flex-col gap-6 items-center bg-background xs:px-[5%] lg:px-[7rem] lg:py-20 xs:py-10">
+      <h3 className="text-primary font-lato font-bold xs:text-[0.5rem] lg:text-[0.8rem] xs:leading-[0.8rem] lg:leading-[1.2rem]">
         OUR SERVICES
       </h3>
       <div className="w-full flex flex-col gap-10 items-center" ref={targetRef}>
         <div className="lg:space-y-3 w-full flex flex-col items-center">
-          <h2 className="text-sh-2 font-nunito font-bold text-2xl text-center w-[20rem]">
+          <h2 className="text-sh-2 font-nunito font-bold xs:text-lg lg:text-2xl text-center w-[20rem] xs:w-full">
             Delivering <span className="text-primary">Exceptional Care,</span>{" "}
             Every Step of the Way
           </h2>
-          <p className="text-sh-3 text-xs w-[40rem] text-center">
+          <p className="text-sh-3 text-xs lg:w-[40rem] xs:w-full text-center">
             At our center, we provide personalized care, designed to meet your
             unique health needs. With a team of experienced health workers, we
             offer services that focus on your well-being every step of the way
           </p>
         </div>
-        <div className="w-full gap-6 grid grid-cols-3">
+        <div className="w-full gap-6 grid lg:grid-cols-3 xs:grid-cols-1">
           {services.map((s, i) => {
             return (
               <motion.div
@@ -97,7 +97,7 @@ const Services = () => {
                   type: "spring",
                   bounce: 0.6,
                 }}
-                className="w-full lg:h-[12.5rem] font-lato bg-white rounded-xl shadow-custom p-4 flex flex-col gap-6"
+                className="w-full xs:h-auto lg:h-[12.5rem] font-lato bg-white rounded-xl shadow-custom p-4 flex flex-col gap-6"
               >
                 <Image
                   src={s.image}
@@ -107,10 +107,12 @@ const Services = () => {
                   height={40}
                 />
                 <div className="space-y-3">
-                  <h2 className="text-sh-2 text-lg  font-semibold">
+                  <h2 className="text-sh-2 xs:text-sm lg:text-lg font-semibold">
                     {s.title}
                   </h2>
-                  <p className="text-sh-3 text-sm">{s.description}</p>
+                  <p className="text-sh-3 lg:text-sm xs:text-xs">
+                    {s.description}
+                  </p>
                 </div>
               </motion.div>
             );
