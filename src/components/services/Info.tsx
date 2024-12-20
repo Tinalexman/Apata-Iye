@@ -1,8 +1,8 @@
 import React from "react";
 
 import Image from "next/image";
-import S1 from "@/public/s_1.jpg";
-import S2 from "@/public/s_2.jpg";
+import S1 from "@/public/marquee_1.jpg";
+import S2 from "@/public/marquee_2.jpg";
 
 const Info = () => {
   return (

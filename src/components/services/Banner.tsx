@@ -3,10 +3,10 @@
 import React from "react";
 
 import Image from "next/image";
-import G1 from "@/public/about_1.jpg";
-import G2 from "@/public/about_2.jpg";
-import G3 from "@/public/about_1.jpg";
-import G4 from "@/public/about_2.jpg";
+import G1 from "@/public/s_1.jpg";
+import G2 from "@/public/s_2.jpg";
+import G3 from "@/public/s_3.jpg";
+import G4 from "@/public/s_4.jpg";
 
 import { motion } from "framer-motion";
 
