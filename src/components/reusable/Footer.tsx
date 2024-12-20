@@ -122,11 +122,11 @@ const Footer = () => {
                 key={i}
                 className="text-white text-opacity-90 cursor-pointer"
                 onClick={() => {
-                  const element = document.getElementById(n.link);
-                  if (element !== null) {
-                    element.scrollIntoView({
-                      behavior: "smooth",
-                    });
+                  if (typeof document !== "undefined") {
+                    const element = document.getElementById(n.link);
+                    if (element !== null) {
+                      element.scrollIntoView({ behavior: "smooth" });
+                    }
                   }
                 }}
               >

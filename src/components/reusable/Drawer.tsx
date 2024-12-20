@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, ReactNode } from "react";
+import { FC, ReactNode, useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 
 import { AnimatePresence, motion } from "framer-motion";
@@ -22,6 +22,15 @@ const Drawer: FC<{
   closeOnClickOutside,
   children,
 }) => {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    return () => setMounted(false);
+  }, []);
+
+  if (!mounted) return null;
+
   return ReactDOM.createPortal(
     <AnimatePresence initial={true}>
       {visible && (
