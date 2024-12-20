@@ -1,6 +1,7 @@
 import Contact from "@/src/components/contact/Contact";
+import { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Contact Us",
 };
 

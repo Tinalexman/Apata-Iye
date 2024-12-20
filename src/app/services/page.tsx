@@ -1,6 +1,7 @@
 import Services from "@/src/components/services/Services";
+import { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Services",
 };
 
