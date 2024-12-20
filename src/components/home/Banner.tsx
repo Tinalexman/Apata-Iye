@@ -12,7 +12,7 @@ import { motion } from "framer-motion";
 const Banner = () => {
   return (
     <div className="lg:h-[calc(100vh-6rem)] xs:h-auto bg-[url('../../public/hero_image.jpg')] w-full bg-cover bg-no-repeat">
-      <div className="w-full h-full bg-[#E8F4FAD6] xs:px-[5%] lg:px-[7rem] flex lg:flex-row xs:flex-col justify-between items-center lg:overflow-visible xs:overflow-hidden">
+      <div className="w-full h-full bg-[#E8F4FAD6] xs:px-[5%] lg:px-[7rem] flex lg:flex-row xs:flex-col justify-between items-center xs:pb-10 lg:overflow-visible xs:overflow-hidden">
         <div className="flex flex-col xs:items-center lg:items-start xs:mt-8 lg:mt-0 lg:gap-7 lg:w-[35rem] xs:w-full">
           <motion.div
             animate={{

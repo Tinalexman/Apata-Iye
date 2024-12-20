@@ -1,11 +1,13 @@
+"use client";
+
 import React from "react";
 import Banner from "./Banner";
 import Navbar from "../reusable/Navbar";
-import Services from "./Services";
+import Services from "../reusable/Services";
 import About from "./About";
-import Testimonials from "./Testimonials";
-import Facilities from "./Facilities";
-import Schedule from "./Schedule";
+import Testimonials from "../reusable/Testimonials";
+import Facilities from "../reusable/Facilities";
+import Schedule from "../reusable/Schedule";
 import Footer from "../reusable/Footer";
 
 const Home = () => {
