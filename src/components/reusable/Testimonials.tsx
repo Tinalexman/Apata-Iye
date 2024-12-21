@@ -7,6 +7,7 @@ import { motion, useInView } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 
 import I1 from "@/public/samuel.png";
+import I3 from "@/public/client_1.jpg";
 
 interface iTestimonial {
   image: StaticImageData | string;
@@ -37,11 +38,11 @@ const Testimonials = () => {
         "If care and dedication were a person, Apata Iye would embody them. Patients here experience unmatched professionalism, unlike common complaints about medical practitioners online. Their remarkable teamwork ensures excellent outcomes. Thank you, Apata Iye Clinic and Maternity, for prioritizing patient health. Truly, Apata Iye lives up to its name.",
     },
     {
-      image: "https://picsum.photos/200/200",
+      image: I3,
       name: "Mr Bankole Adebayo",
-      role: "Product Designer",
+      role: "Civil Servant",
       content:
-        "I am deeply grateful to the team at Apataiye Clinic and Maternity Home for their exceptional care and professionalism. From my first visit, I was treated with respect and compassion. The doctors and staff worked tirelessly to address my health needs and made my recovery as smooth as possible. It's reassuring to have a place so dedicated to patient care.",
+        "I am so grateful for the exceptional care I received at Apata-Iye Clinic. From admission to recovery, I was treated with compassion, professionalism, and attention to detail. The nurses and doctors went above and beyond to ensure my comfort, and I healed quickly. Thank you for making such a positive difference in patients' lives",
     },
   ];
 
@@ -87,7 +88,7 @@ const Testimonials = () => {
                   <Image
                     src={t.image}
                     alt="service image"
-                    className="size-[40px] rounded-full"
+                    className="size-[40px] rounded-full object-cover"
                     width={40}
                     height={40}
                   />

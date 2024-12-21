@@ -6,6 +6,7 @@ import Schedule from "../reusable/Schedule";
 import Footer from "../reusable/Footer";
 import Info from "./Info";
 import MV from "./MV";
+import Founder from "./Founder";
 
 const About = () => {
   return (
@@ -14,6 +15,7 @@ const About = () => {
       <Banner />
       <MV />
       <Info />
+      <Founder />
       <Testimonials />
       <Schedule />
       <Footer />
