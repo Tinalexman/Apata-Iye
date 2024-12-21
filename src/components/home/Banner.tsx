@@ -82,6 +82,7 @@ const Banner = () => {
               ease: "easeOut",
               delay: 0.5,
             }}
+            onClick={() => window.location.assign("/book-appointment")}
             className="lg:mt-3 xs:mt-10 lg:h-12 xs:h-10 xs:font-bold bg-primary rounded-[16px] hover:font-bold transition-all duration-300 ease-out font-lato text-white lg:w-[20rem] xs:w-full font-medium"
           >
             BOOK AN APPOINTMENT

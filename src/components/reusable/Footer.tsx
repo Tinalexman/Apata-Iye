@@ -142,6 +142,11 @@ const Footer = () => {
                   key={i}
                   className="text-white text-opacity-70 cursor-pointer"
                   onClick={() => {
+                    if (typeof window !== undefined && i === 3) {
+                      window.location.assign("/book-appointment");
+                      return;
+                    }
+
                     if (typeof document !== "undefined") {
                       const element = document.getElementById(n.link);
                       if (element !== null) {
@@ -281,6 +286,11 @@ const Footer = () => {
                     key={i}
                     className="text-white text-opacity-60"
                     onClick={() => {
+                      if (typeof window !== undefined && i === 1) {
+                        window.location.assign("/book-appointment");
+                        return;
+                      }
+
                       if (typeof document !== "undefined") {
                         const element = document.getElementById(n.link);
                         if (element !== null) {

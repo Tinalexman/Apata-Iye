@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, FC } from "react";
 
 import Image from "next/image";
 
@@ -10,14 +10,16 @@ import I4 from "@/public/img_4.jpg";
 
 import { motion, useInView } from "framer-motion";
 
-const Facilities = () => {
+const Facilities: FC<{ useWhite?: boolean }> = ({ useWhite }) => {
   const target = useRef(null);
   const inView = useInView(target, { amount: "some" });
   return (
     <div
       id="facilities"
       ref={target}
-      className="w-full flex lg:flex-col xs:flex-col-reverse lg:pt-10 xs:pt-5 lg:bg-background xs:bg-primary"
+      className={`w-full flex lg:flex-col xs:flex-col-reverse lg:pt-10 xs:pt-5 ${
+        useWhite ? "lg:bg-white" : "lg:bg-background"
+      } xs:bg-primary`}
     >
       <div className="w-full flex flex-col">
         <h3 className="lg:text-primary xs:text-white font-lato font-bold xs:text-[0.5rem] lg:text-[0.8rem] xs:leading-[0.8rem] lg:leading-[1.2rem] lg:ml-[7rem] xs:ml-[5%]">

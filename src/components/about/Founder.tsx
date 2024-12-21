@@ -4,7 +4,6 @@ import React, { useRef } from "react";
 
 import Image from "next/image";
 import F1 from "@/public/founder.jpg";
-import { FaStar } from "react-icons/fa6";
 
 import { motion, useInView } from "framer-motion";
 
@@ -18,7 +17,7 @@ const Founder = () => {
       ref={target}
       className="font-lato w-full h-full bg-[url('../../public/founder_background.jpg')] bg-cover bg-no-repeat"
     >
-      <div className="w-full h-full bg-[#1A1F71E0] xs:px-[5%] xs:py-10 lg:px-[7rem] lg:pt-10 lg:pb-20 relative">
+      <div className="w-full h-full bg-[#1A1F71E0] xs:px-[5%] xs:py-5 lg:px-[7rem] lg:pt-10 lg:pb-20 relative">
         <div className="lg:w-[60%] xs:w-full lg:rounded-l-lg lg:rounded-tr xs:rounded-md bg-[url('../../public/founder_bg_2.jpg')] gap-5 bg-cover bg-no-repeat xs:px-5 xs:py-12 lg:pl-10 lg:pr-28 lg:pt-16 lg:pb-28 flex flex-col justify-center">
           <motion.h2
             animate={{
