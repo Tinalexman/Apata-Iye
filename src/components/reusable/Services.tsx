@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 
 import { motion, useInView } from "framer-motion";
 
@@ -24,6 +24,8 @@ const Services = () => {
   const isInView = useInView(targetRef, {
     amount: "some",
   });
+
+  const [hoverIndex, setHoveredIndex] = useState<number>(-1);
 
   const services: iService[] = [
     {
@@ -97,7 +99,11 @@ const Services = () => {
                   type: "spring",
                   bounce: 0.6,
                 }}
-                className="w-full xs:h-auto lg:h-[12.5rem] font-lato bg-white rounded-xl shadow-custom p-4 flex flex-col gap-6"
+                onMouseEnter={() => setHoveredIndex(i)}
+                onMouseLeave={() => setHoveredIndex(-1)}
+                className={`w-full xs:h-auto lg:h-[12.5rem] font-lato  ${
+                  hoverIndex === i ? "bg-primary" : "bg-white"
+                } rounded-xl shadow-custom p-4 flex flex-col gap-6 transition-colors duration-300 ease-out`}
               >
                 <Image
                   src={s.image}
@@ -107,10 +113,18 @@ const Services = () => {
                   height={40}
                 />
                 <div className="space-y-3">
-                  <h2 className="text-sh-2 xs:text-sm lg:text-lg font-semibold">
+                  <h2
+                    className={`${
+                      hoverIndex === i ? "text-white" : "text-sh-2"
+                    } xs:text-sm lg:text-lg font-semibold transition-colors duration-300 ease-out`}
+                  >
                     {s.title}
                   </h2>
-                  <p className="text-sh-3 lg:text-sm xs:text-xs">
+                  <p
+                    className={`${
+                      hoverIndex === i ? "text-white" : "text-sh-3"
+                    } lg:text-sm xs:text-xs transition-colors duration-300 ease-out`}
+                  >
                     {s.description}
                   </p>
                 </div>

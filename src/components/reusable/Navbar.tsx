@@ -103,13 +103,13 @@ const Navbar: FC<{ active?: number }> = ({ active = 0 }) => {
         width="70vw"
         height="100vh"
       >
-        <div className="w-full h-full bg-white px-10 flex flex-col justify-center items-end relative">
+        <div className="w-full h-full bg-white px-10 flex flex-col  items-end relative">
           <MdOutlineCancel
             onClick={() => setOpened(false)}
             className="absolute top-10 left-5 text-2xl text-sh-2"
           />
 
-          <div className="w-full flex flex-col gap-5">
+          <div className="w-full flex flex-col gap-5 mt-32">
             {navs.map((nv, i) => (
               <div
                 key={i}

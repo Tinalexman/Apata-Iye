@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 
 import { motion, useInView } from "framer-motion";
 
@@ -21,6 +21,8 @@ const Testimonials = () => {
   const isInView = useInView(targetRef, {
     amount: "some",
   });
+
+  const [hoverIndex, setHoveredIndex] = useState<number>(-1);
 
   const testimonials: iTestimonial[] = [
     {
@@ -82,7 +84,11 @@ const Testimonials = () => {
                   type: "spring",
                   bounce: 0.6,
                 }}
-                className="w-full lg:h-[18rem] xs:h-auto font-lato bg-white rounded-tl-2xl rounded-tr rounded-bl rounded-br-2xl shadow-custom p-4 flex flex-col gap-4"
+                onMouseEnter={() => setHoveredIndex(i)}
+                onMouseLeave={() => setHoveredIndex(-1)}
+                className={`w-full lg:h-[18rem] xs:h-auto font-lato ${
+                  hoverIndex === i ? "bg-primary" : "bg-white"
+                } transition-colors duration-300 ease-out rounded-tl-2xl rounded-tr rounded-bl rounded-br-2xl shadow-custom p-4 flex flex-col gap-4`}
               >
                 <div className="w-full flex gap-2 items-center">
                   <Image
@@ -92,17 +98,37 @@ const Testimonials = () => {
                     width={40}
                     height={40}
                   />
-                  <div className="">
-                    <h2 className="text-primary xs:text-sm lg:text-lg font-semibold">
+                  <div>
+                    <h2
+                      className={`${
+                        hoverIndex === i ? "text-white" : "text-primary"
+                      } xs:text-sm lg:text-lg font-semibold transition-colors duration-300 ease-out`}
+                    >
                       {t.name}
                     </h2>
-                    <p className="text-secondary lg:text-xs xs:text-[0.5rem]">
+                    <p
+                      className={`${
+                        hoverIndex === i
+                          ? "text-white text-opacity-70"
+                          : "text-secondary"
+                      } lg:text-xs xs:text-[0.5rem] transition-colors duration-300 ease-out`}
+                    >
                       {t.role}
                     </p>
                   </div>
                 </div>
-                <p className="text-sh-3 lg:text-sm xs:text-xs">{t.content}</p>
-                <p className="text-primary lg:text-5xl xs:text-3xl font-bold font-nunito text-end">
+                <p
+                  className={`${
+                    hoverIndex === i ? "text-white" : "text-sh-3"
+                  } text-sh-3 lg:text-sm xs:text-xs transition-colors duration-300 ease-out`}
+                >
+                  {t.content}
+                </p>
+                <p
+                  className={`${
+                    hoverIndex === i ? "text-white" : "text-primary"
+                  } lg:text-5xl xs:text-3xl font-bold font-nunito text-end transition-colors duration-300 ease-out`}
+                >
                   “
                 </p>
               </motion.div>
