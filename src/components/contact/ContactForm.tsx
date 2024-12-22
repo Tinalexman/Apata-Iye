@@ -46,10 +46,10 @@ const ContactForm = () => {
   });
 
   return (
-    <div className="w-full xs:h-auto lg:h-[65vh] font-lato bg-background xs:pb-10 lg:pb-0 lg:px-[7rem] xs:px-[5%] lg:relative">
+    <div className="w-full xs:h-auto lg:h-[500px] font-lato bg-background xs:pb-10 lg:pb-0 lg:px-[7rem] xs:px-[5%] lg:relative">
       <div
         ref={target}
-        className="xs:w-full lg:w-auto xs:rounded lg:rounded-lg overflow-hidden grid lg:grid-cols-2 xs:grid-cols-1 lg:absolute lg:-top-[30vh] lg:left-[7rem] lg:right-[7rem]"
+        className="xs:w-full lg:w-auto xs:rounded lg:rounded-lg overflow-hidden grid lg:grid-cols-2 xs:grid-cols-1 lg:absolute lg:-top-[180px] lg:left-[7rem] lg:right-[7rem]"
       >
         <motion.div
           animate={{

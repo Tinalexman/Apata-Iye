@@ -12,7 +12,7 @@ import { motion } from "framer-motion";
 
 const Banner = () => {
   return (
-    <div className="lg:h-[calc(100vh-6rem)] xs:h-auto bg-[url('../../public/service_background.jpg')] w-full bg-cover bg-no-repeat">
+    <div className="lg:h-[600px] xs:h-auto bg-[url('../../public/service_background.jpg')] w-full bg-cover bg-no-repeat">
       <div className="w-full flex flex-col">
         <div className="w-full lg:h-[10rem] xs:h-auto xs:pb-5 lg:pb-0 bg-[#E8F4FAD6] xs:px-[5%] lg:px-[7rem] flex items-center">
           <motion.h1

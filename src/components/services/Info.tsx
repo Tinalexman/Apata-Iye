@@ -6,7 +6,7 @@ import S2 from "@/public/marquee_2.jpg";
 
 const Info = () => {
   return (
-    <div className="w-full flex flex-col gap-20 bg-background lg:pt-20 xs:pt-10">
+    <div className="w-full flex flex-col gap-20 bg-background lg:pt-[100px] xs:pt-10">
       <p className="xs:px-[5%] lg:px-[7rem] lg:text-sm xs:text-xs text-sh-3 lg:w-[90%]">
         At our clinic, we take pride in delivering exceptional care across every
         service we provide. From preventative treatments to specialized care,

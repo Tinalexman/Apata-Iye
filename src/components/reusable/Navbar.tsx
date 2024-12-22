@@ -74,7 +74,7 @@ const Navbar: FC<{ active?: number }> = ({ active = 0 }) => {
                         active === i
                           ? "text-sh-2 font-bold"
                           : "text-sh-1 font-semibold "
-                      } text-[0.9rem] transition-all hover:scale-105 scale-100 ease-out duration-300`}
+                      } text-[0.9rem] hover:text-secondary transition-all hover:scale-105 scale-100 ease-out duration-300`}
                     >
                       {nv.name}
                     </Link>
