@@ -88,7 +88,7 @@ const Navbar: FC<{ active?: number }> = ({ active = 0 }) => {
             href={active === -1 ? "/contact-us" : "/book-appointment"}
             className="xs:hidden lg:block py-1 border-primary hover:bg-primary hover:text-white duration-300 ease-out transition-colors border rounded-xl text-[0.9rem] font-lato text-primary px-4"
           >
-            {active === -1 ? "CONTACT US" : "BOOK APPOINTMENT"}
+            {active === -1 ? "CONTACT US" : "BOOK NOW"}
           </Link>
           <IoMdMenu
             className="lg:hidden xs:block cursor-pointer text-2xl"

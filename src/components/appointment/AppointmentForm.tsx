@@ -157,7 +157,7 @@ const AppointmentForm = () => {
                 </div>
               </div>
               <button className="bg-primary lg:text-lg xs:text-sm rounded text-white w-full h-10 grid place-content-center font-semibold">
-                SEND MY REQUEST
+                SUBMIT
               </button>
             </Form>
           )}

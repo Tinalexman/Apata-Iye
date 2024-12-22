@@ -4,7 +4,7 @@ import React from "react";
 const Welcome = () => {
   return (
     <div className="w-full xs:py-10 lg:py-20 lg:px-[7rem] bg-background font-lato">
-      <div className="w-full lg:rounded-2xl xs:rounded-none bg-[url('../../public/app_3.jpg')] bg-cover overflow-hidden">
+      <div className="w-full lg:rounded-2xl xs:rounded-none bg-[url('../../public/contact_2.jpg')] bg-cover overflow-hidden">
         <div className="w-full h-full xs:p-5 lg:px-0 lg:py-5 bg-white bg-opacity-80 flex flex-col items-center">
           <h3 className="text-primary font-lato font-bold xs:text-[0.5rem] lg:text-[0.8rem] xs:leading-[0.8rem] lg:leading-[1.2rem]">
             WELCOME TO...

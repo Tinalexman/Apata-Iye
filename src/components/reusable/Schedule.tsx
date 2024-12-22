@@ -18,7 +18,7 @@ const Schedule = () => {
         </p>
         <Link
           href={"/book-appointment"}
-          className="py-1 lg:mt-5 xs:mt-2 border-primary hover:bg-primary bg-white hover:text-white duration-300 ease-out transition-colors border rounded-xl lg:text-[0.9rem] xs:text-[0.6rem] font-lato text-primary lg:w-[200px] xs:w-[150px]"
+          className="py-1 lg:mt-5 xs:mt-2 border-primary hover:bg-primary bg-white hover:text-white duration-300 ease-out transition-colors border rounded-xl lg:text-[0.9rem] xs:text-[0.6rem] font-lato text-primary lg:w-[200px] xs:w-[150px] grid place-content-center"
         >
           BOOK AN APPOINTMENT
         </Link>
