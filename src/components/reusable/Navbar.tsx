@@ -52,7 +52,7 @@ const Navbar: FC<{ active?: number }> = ({ active = 0 }) => {
                 height={42}
                 className="size-12"
               />
-              <div className="flex flex-col w-fit font-lato xs:hidden lg:block">
+              <div className="flex flex-col w-fit font-lato">
                 <h2 className="font-extrabold text-primary text-[1.35rem] leading-[1.4rem]">
                   APATA-IYE
                 </h2>

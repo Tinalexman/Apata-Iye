@@ -111,54 +111,10 @@ const About = () => {
               duration: 1,
               ease: "easeOut",
             }}
-            className="lg:w-[10rem] xs:w-full lg:h-14 xs:h-12 rounded bg-white py-1 flex flex-col justify-center items-center text-[#145F17]"
-          >
-            <h6 className="text-xs">Happy Patients</h6>
-            <h2 className="lg:text-2xl xs:text-xl font-bold">50,000+</h2>
-          </motion.div>
-          <motion.div
-            animate={{
-              x: inView ? "0%" : "20%",
-              opacity: inView ? 1 : 0,
-            }}
-            transition={{
-              duration: 1,
-              ease: "easeOut",
-            }}
             className="lg:w-[10rem] xs:w-full lg:h-14 xs:h-12 rounded bg-white py-1 flex flex-col justify-center items-center text-primary"
           >
             <h6 className="text-xs">Proven Trust</h6>
             <h2 className="lg:text-2xl xs:text-xl font-bold">30+ years</h2>
-          </motion.div>
-        </div>
-        <div className="flex lg:w-fit xs:w-full gap-4 mt-2">
-          <motion.div
-            animate={{
-              x: inView ? "0%" : "-20%",
-              opacity: inView ? 1 : 0,
-            }}
-            transition={{
-              duration: 1,
-              ease: "easeOut",
-            }}
-            className="lg:w-[10rem] xs:w-full lg:h-14 xs:h-12 rounded bg-white py-1 flex flex-col justify-center items-center text-[#EB0F5F]"
-          >
-            <h6 className="text-xs">Accolades</h6>
-            <h2 className="lg:text-2xl xs:text-xl font-bold">100+</h2>
-          </motion.div>
-          <motion.div
-            animate={{
-              y: inView ? "0%" : "20%",
-              opacity: inView ? 1 : 0,
-            }}
-            transition={{
-              duration: 1,
-              ease: "easeOut",
-            }}
-            className="lg:w-[10rem] xs:w-full lg:h-14 xs:h-12 rounded bg-white py-1 flex flex-col justify-center items-center text-[#25C3B6]"
-          >
-            <h6 className="text-xs">Employees</h6>
-            <h2 className="lg:text-2xl xs:text-xl font-bold">20+</h2>
           </motion.div>
         </div>
       </div>
