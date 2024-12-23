@@ -95,7 +95,7 @@ const ContactForm = () => {
     if (!loading && success) {
       resetForm();
     }
-  }, [loading, success]);
+  }, [loading, success, resetForm]);
 
   return (
     <div className="w-full xs:h-auto lg:h-[500px] font-lato bg-background xs:pb-10 lg:pb-0 lg:px-[7rem] xs:px-[5%] lg:relative">

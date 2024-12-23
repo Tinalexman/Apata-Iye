@@ -72,7 +72,7 @@ const AppointmentForm = () => {
     if (!loading && success) {
       resetForm();
     }
-  }, [loading, success]);
+  }, [loading, success, resetForm]);
 
   return (
     <div className="w-full lg:py-20 lg:px-[7rem] xs:px-[5%] xs:py-10 bg-primary">

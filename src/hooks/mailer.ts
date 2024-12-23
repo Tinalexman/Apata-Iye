@@ -1,3 +1,5 @@
+//ts-ignore
+
 import axios from "axios";
 
 import { useState } from "react";
@@ -20,7 +22,7 @@ export const useSendMail = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [success, setSuccess] = useState<boolean>(false);
 
-  let sendMail = async (data: iMailData) => {
+  const sendMail = async (data: iMailData) => {
     if (loading) return;
     setLoading(true);
 
@@ -32,6 +34,7 @@ export const useSendMail = () => {
       username: "no-reply@apataiyeclinic.ng",
       password: "E50vnhXbu_j=",
     };
+    /* eslint-disable @typescript-eslint/no-explicit-any */
     try {
       await axios.post("https://mailer-xg4d.onrender.com/api/email", data);
       toast.success("Your message has been sent successfully.");
@@ -46,6 +49,7 @@ export const useSendMail = () => {
     }
     setLoading(false);
   };
+  /* eslint-enable @typescript-eslint/no-explicit-any */
 
   return { loading, sendMail, success };
 };
