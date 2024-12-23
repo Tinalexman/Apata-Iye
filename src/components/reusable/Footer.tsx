@@ -92,10 +92,10 @@ const Footer = () => {
                 <h2 className="font-extrabold text-white text-[1.35rem] leading-[1.4rem]">
                   APATA-IYE
                 </h2>
-                <p className="text-[#696969] font-semibold text-[0.6rem] leading-[0.8rem]">
+                <p className="text-white text-opacity-90 font-semibold text-[0.6rem] leading-[0.8rem]">
                   CLINIC AND MATERNITY
                 </p>
-                <p className="text-white text-[0.5rem] ">
+                <p className="text-white text-opacity-80 text-[0.5rem] ">
                   in service to humanity
                 </p>
               </div>
@@ -237,10 +237,10 @@ const Footer = () => {
                 <h2 className="font-extrabold text-white text-[1.1rem] leading-[1.1rem]">
                   APATA-IYE
                 </h2>
-                <p className="text-[#696969] font-semibold text-[0.5rem] leading-[0.6rem]">
+                <p className="text-white text-opacity-90 font-semibold text-[0.5rem] leading-[0.6rem]">
                   CLINIC AND MATERNITY
                 </p>
-                <p className="text-white text-[0.5rem] ">
+                <p className="text-white text-opacity-80 text-[0.5rem] ">
                   in service to humanity
                 </p>
               </div>
