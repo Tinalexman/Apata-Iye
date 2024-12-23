@@ -56,11 +56,11 @@ const Navbar: FC<{ active?: number }> = ({ active = 0 }) => {
                 <h2 className="font-extrabold text-primary text-[1.35rem] leading-[1.4rem]">
                   APATA-IYE
                 </h2>
-                <p className="text-secondary font-semibold text-[0.6rem] leading-[0.8rem]">
+                <p className="text-[#696969] font-semibold text-[0.6rem] leading-[0.8rem]">
                   CLINIC AND MATERNITY
                 </p>
                 <p className="text-primary text-[0.5rem] ">
-                  ...to God and Humanity
+                  in service to humanity
                 </p>
               </div>
             </div>
