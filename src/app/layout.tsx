@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Lato, Nunito } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "react-hot-toast";
 
 const nunito = Nunito({
   variable: "--font-nunito",
@@ -30,6 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${lato.variable} ${nunito.variable} antialiased`}>
+        <Toaster />
         {children}
       </body>
     </html>

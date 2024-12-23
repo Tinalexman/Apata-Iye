@@ -1,12 +1,13 @@
 "use client";
 
-import React, { useRef } from "react";
-
-import { Formik, Form } from "formik";
+import React, { useRef, useEffect } from "react";
+import { Bars } from "react-loading-icons";
+import { useFormik } from "formik";
 import { IoLocationOutline } from "react-icons/io5";
 import Link from "next/link";
 
 import { motion, useInView } from "framer-motion";
+import { useSendMail } from "@/src/hooks/mailer";
 
 interface iFormValues {
   name: string;
@@ -22,6 +23,7 @@ interface iData {
 }
 
 const ContactForm = () => {
+  const { loading, sendMail, success } = useSendMail();
   const data: iData[] = [
     {
       title: "Clinic Address",
@@ -44,6 +46,56 @@ const ContactForm = () => {
   const inView = useInView(target, {
     amount: "some",
   });
+
+  const {
+    values,
+    errors,
+    touched,
+    handleSubmit,
+    handleChange,
+    handleBlur,
+    resetForm,
+  } = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
+    },
+    validate: (values) => {
+      const errors: Partial<iFormValues> = {};
+      if (!values.name) {
+        errors.name = "Name is required";
+      }
+
+      if (!values.email) {
+        errors.email = "Email is required";
+      }
+
+      if (!values.phone) {
+        errors.phone = "Phone number is required";
+      }
+
+      if (!values.message) {
+        errors.message = "Message is required";
+      }
+
+      return errors;
+    },
+    onSubmit: (values) => {
+      sendMail({
+        body: `You have a new message from ${values.name}. \nEmail: ${values.email} \nPhone: ${values.phone} \nMessage: ${values.message}`,
+        from: values.email,
+        subject: "New Message",
+      });
+    },
+  });
+
+  useEffect(() => {
+    if (!loading && success) {
+      resetForm();
+    }
+  }, [loading, success]);
 
   return (
     <div className="w-full xs:h-auto lg:h-[500px] font-lato bg-background xs:pb-10 lg:pb-0 lg:px-[7rem] xs:px-[5%] lg:relative">
@@ -121,128 +173,91 @@ const ContactForm = () => {
           }}
           className="w-full h-full"
         >
-          <Formik<iFormValues>
-            initialValues={{
-              name: "",
-              email: "",
-              phone: "",
-              message: "",
-            }}
-            validate={(values) => {
-              const errors: Partial<iFormValues> = {};
-              if (!values.name) {
-                errors.name = "Name is required";
-              }
-
-              if (!values.email) {
-                errors.email = "Email is required";
-              }
-
-              if (!values.phone) {
-                errors.phone = "Phone number is required";
-              }
-
-              if (!values.message) {
-                errors.message = "Message is required";
-              }
-
-              return errors;
-            }}
-            onSubmit={(values) => {
-              console.log(values);
-            }}
+          <form
+            className="w-full h-full bg-white flex flex-col gap-6 items-start font-lato xs:px-[5%] xs:py-5 lg:py-10 lg:px-20"
+            method="POST"
+            onSubmit={handleSubmit}
           >
-            {({
-              values,
-              errors,
-              touched,
-              handleSubmit,
-              handleChange,
-              handleBlur,
-            }) => (
-              <Form
-                className="w-full h-full bg-white flex flex-col gap-6 items-start font-lato xs:px-[5%] xs:py-5 lg:py-10 lg:px-20"
-                method="POST"
-                onSubmit={handleSubmit}
-              >
-                <h2 className="text-sh-2 font-semibold lg:text-xl">
-                  Share Your Inquiry
-                </h2>
-                <div className="flex flex-col items-start w-full gap-2">
-                  <div className="space-y-1 w-full">
-                    <h6 className="xs:text-xs lg:text-sm text-sh-3 ">
-                      Name: <span className="text-red-500">*</span>
-                    </h6>
-                    <input
-                      type="text"
-                      name="name"
-                      placeholder="Enter your full name"
-                      value={values.name}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      className="w-full border-[#868181] border rounded p-2 focus:outline-none xs:text-sm lg:text-lg placeholder:text-[#A1A1A1] text-sh-2"
-                    />
-                    {errors.name && touched.name && (
-                      <p className="text-xs text-red-500 ">{errors.name}</p>
-                    )}
-                  </div>
-                  <div className="space-y-1 w-full">
-                    <h6 className="xs:text-xs lg:text-sm text-sh-3 ">
-                      Email Address: <span className="text-red-500">*</span>
-                    </h6>
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="Enter your email address"
-                      value={values.email}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      className="w-full border-[#868181] border rounded p-2 focus:outline-none xs:text-sm lg:text-lg placeholder:text-[#A1A1A1] text-sh-2"
-                    />
-                    {errors.email && touched.email && (
-                      <p className="text-xs text-red-500 ">{errors.email}</p>
-                    )}
-                  </div>
-                  <div className="space-y-1 w-full">
-                    <h6 className="lg:text-sm xs:text-xs text-sh-3 ">
-                      Phone Number: <span className="text-red-500">*</span>
-                    </h6>
-                    <input
-                      type="tel"
-                      name="phone"
-                      placeholder="Enter your phone number"
-                      value={values.phone}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      className="w-full border-[#868181] border rounded p-2 focus:outline-none xs:text-sm lg:text-lg placeholder:text-[#A1A1A1] text-sh-2"
-                    />
-                    {errors.phone && touched.phone && (
-                      <p className="text-xs text-red-500 ">{errors.phone}</p>
-                    )}
-                  </div>
-                  <div className="space-y-1 w-full">
-                    <h6 className="lg:text-sm xs:text-xs text-sh-3">
-                      Message: <span className="text-red-500">*</span>
-                    </h6>
-                    <textarea
-                      name="message"
-                      placeholder="Type your message here..."
-                      value={values.message}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      className="w-full border-[#868181] resize-none border xs:text-sm lg:text-lg rounded p-2 lg:h-32 xs:h-24 focus:outline-none placeholder:text-[#A1A1A1] text-sh-2"
-                    />
-                    {errors.message && touched.message && (
-                      <p className="text-xs text-red-500 ">{errors.message}</p>
-                    )}
-                  </div>
-                </div>
-                <button className="bg-primary lg:text-lg xs:text-sm rounded text-white w-full h-10 grid place-content-center font-semibold">
-                  SUBMIT
-                </button>
-              </Form>
-            )}
-          </Formik>
+            <h2 className="text-sh-2 font-semibold lg:text-xl">
+              Share Your Inquiry
+            </h2>
+            <div className="flex flex-col items-start w-full gap-2">
+              <div className="space-y-1 w-full">
+                <h6 className="xs:text-xs lg:text-sm text-sh-3 ">
+                  Name: <span className="text-red-500">*</span>
+                </h6>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Enter your full name"
+                  value={values.name}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className="w-full border-[#868181] border rounded p-2 focus:outline-none xs:text-sm lg:text-lg placeholder:text-[#A1A1A1] text-sh-2"
+                />
+                {errors.name && touched.name && (
+                  <p className="text-xs text-red-500 ">{errors.name}</p>
+                )}
+              </div>
+              <div className="space-y-1 w-full">
+                <h6 className="xs:text-xs lg:text-sm text-sh-3 ">
+                  Email Address: <span className="text-red-500">*</span>
+                </h6>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Enter your email address"
+                  value={values.email}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className="w-full border-[#868181] border rounded p-2 focus:outline-none xs:text-sm lg:text-lg placeholder:text-[#A1A1A1] text-sh-2"
+                />
+                {errors.email && touched.email && (
+                  <p className="text-xs text-red-500 ">{errors.email}</p>
+                )}
+              </div>
+              <div className="space-y-1 w-full">
+                <h6 className="lg:text-sm xs:text-xs text-sh-3 ">
+                  Phone Number: <span className="text-red-500">*</span>
+                </h6>
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="Enter your phone number"
+                  value={values.phone}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className="w-full border-[#868181] border rounded p-2 focus:outline-none xs:text-sm lg:text-lg placeholder:text-[#A1A1A1] text-sh-2"
+                />
+                {errors.phone && touched.phone && (
+                  <p className="text-xs text-red-500 ">{errors.phone}</p>
+                )}
+              </div>
+              <div className="space-y-1 w-full">
+                <h6 className="lg:text-sm xs:text-xs text-sh-3">
+                  Message: <span className="text-red-500">*</span>
+                </h6>
+                <textarea
+                  name="message"
+                  placeholder="Type your message here..."
+                  value={values.message}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className="w-full border-[#868181] resize-none border xs:text-sm lg:text-lg rounded p-2 lg:h-32 xs:h-24 focus:outline-none placeholder:text-[#A1A1A1] text-sh-2"
+                />
+                {errors.message && touched.message && (
+                  <p className="text-xs text-red-500 ">{errors.message}</p>
+                )}
+              </div>
+            </div>
+            <button
+              className={`bg-primary ${
+                loading && "bg-opacity-70 cursor-not-allowed"
+              } lg:text-lg xs:text-sm rounded text-white w-full h-10 grid place-content-center font-semibold`}
+            >
+              {loading ? <Bars width={24} /> : "SUBMIT"}
+            </button>
+          </form>
         </motion.div>
       </div>
     </div>
