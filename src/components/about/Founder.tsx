@@ -79,7 +79,7 @@ const Founder = () => {
               bounce: 0.6,
             }}
           >
-            <h2 className="text-sh-2 font-bold">Soogun Olusina Isaac</h2>
+            <h2 className="text-sh-2 font-bold">Soogun Isaac Olusina</h2>
             <p className="lg:text-xs text-sh-3">C.E.O</p>
           </motion.div>
         </div>

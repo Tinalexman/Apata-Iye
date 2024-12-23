@@ -57,7 +57,7 @@ const About = () => {
             duration: 1,
             ease: "easeOut",
           }}
-          className="text-secondary font-bold xs:text-[0.5rem] lg:text-[0.8rem] xs:leading-[0.8rem] lg:leading-[1.2rem]"
+          className="text-white font-bold xs:text-[0.5rem] lg:text-[0.8rem] xs:leading-[0.8rem] lg:leading-[1.2rem]"
         >
           ABOUT US
         </motion.h3>
