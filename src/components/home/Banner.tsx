@@ -1,12 +1,6 @@
 "use client";
 
 import React from "react";
-
-import Image from "next/image";
-import G1 from "@/public/7_frm.svg";
-import G2 from "@/public/100k_img.svg";
-import G3 from "@/public/3_and_4.svg";
-
 import { motion } from "framer-motion";
 
 const Banner = () => {
@@ -89,7 +83,11 @@ const Banner = () => {
           </motion.button>
         </div>
         <div className="lg:w-[30rem] xs:w-full h-auto relative xs:mt-14 lg:mt-0">
-          <Image src={G3} alt="doctor" className="w-full h-auto object-cover" />
+          <img
+            src={"/3_and_4.svg"}
+            alt="doctor"
+            className="w-full h-auto object-cover"
+          />
           <motion.div
             animate={{
               rotate: ["2.5deg", "-2.5deg"],
@@ -102,8 +100,8 @@ const Banner = () => {
             }}
             className="lg:w-[300px] xs:w-[200px] h-auto object-cover absolute -bottom-6 lg:-right-10 xs:right-0"
           >
-            <Image
-              src={G1}
+            <img
+              src={"/7_frm.svg"}
               alt="benefits"
               className="w-full h-auto object-cover"
             />
@@ -120,8 +118,8 @@ const Banner = () => {
             }}
             className="lg:w-[180px] xs:w-[100px] h-auto object-cover absolute -top-6 lg:-left-10 xs:left-0"
           >
-            <Image
-              src={G2}
+            <img
+              src={"/100k_img.svg"}
               alt="price"
               className="w-full h-auto object-cover"
             />

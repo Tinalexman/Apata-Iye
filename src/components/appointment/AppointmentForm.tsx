@@ -6,12 +6,6 @@ import { Bars } from "react-loading-icons";
 
 import { useFormik } from "formik";
 
-import Image from "next/image";
-import I1 from "@/public/app_1.jpg";
-
-import I4 from "@/public/app_4.jpg";
-import I5 from "@/public/app_5.jpg";
-import I6 from "@/public/app_6.jpg";
 import { useSendMail } from "@/src/hooks/mailer";
 
 interface iFormValues {
@@ -80,12 +74,12 @@ const AppointmentForm = () => {
         <div className="xs:px-2.5 xs:my-5 lg:my-0 lg:px-0 relative w-full h-full">
           <div className="xs:w-full lg:w-[70%] lg:h-[80%] bg-secondary rounded-r-2xl rounded-l-lg" />
           <div className="lg:h-[80%] lg:w-[95%] xs:w-full xs:static lg:absolute lg:left-5 lg:top-5 rounded-md overflow-hidden pr-0.5 bg-secondary">
-            <Image src={I1} alt="doctor" className="w-full" />
+            <img src={"/app_1.jpg"} alt="doctor" className="w-full" />
           </div>
 
           <div className="w-full grid grid-cols-3 absolute bottom-0 left-0 right-0 px-5">
-            {[I4, I5, I6].map((im, i) => (
-              <Image
+            {["/app_4.jpg", "/app_5.jpg", "/app_6.jpg"].map((im, i) => (
+              <img
                 key={i}
                 src={im}
                 alt="appointment"

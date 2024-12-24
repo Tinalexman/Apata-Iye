@@ -4,13 +4,8 @@ import React, { useRef, useState } from "react";
 
 import { motion, useInView } from "framer-motion";
 
-import Image, { StaticImageData } from "next/image";
-
-import I1 from "@/public/samuel.png";
-import I3 from "@/public/client_1.jpg";
-
 interface iTestimonial {
-  image: StaticImageData | string;
+  image: string;
   name: string;
   role: string;
   content: string;
@@ -26,7 +21,7 @@ const Testimonials = () => {
 
   const testimonials: iTestimonial[] = [
     {
-      image: I1,
+      image: "/samuel.png",
       name: "Samuel Sonola",
       role: "Product Designer",
       content:
@@ -40,7 +35,7 @@ const Testimonials = () => {
         "If care and dedication were a person, Apata Iye would embody them. Patients here experience unmatched professionalism, unlike common complaints about medical practitioners online. Their remarkable teamwork ensures excellent outcomes. Thank you, Apata Iye Clinic and Maternity, for prioritizing patient health. Truly, Apata Iye lives up to its name.",
     },
     {
-      image: I3,
+      image: "/client_1.jpg",
       name: "Mr Bankole Adebayo",
       role: "Civil Servant",
       content:
@@ -91,7 +86,7 @@ const Testimonials = () => {
                 } transition-colors duration-300 ease-out rounded-tl-2xl rounded-tr rounded-bl rounded-br-2xl shadow-custom p-4 flex flex-col gap-4`}
               >
                 <div className="w-full flex gap-2 items-center">
-                  <Image
+                  <img
                     src={t.image}
                     alt="service image"
                     className="size-[40px] rounded-full object-cover"

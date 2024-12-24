@@ -2,12 +2,6 @@
 
 import React from "react";
 
-import Image from "next/image";
-import G1 from "@/public/s_1.jpg";
-import G2 from "@/public/s_2.jpg";
-import G3 from "@/public/s_3.jpg";
-import G4 from "@/public/s_4.jpg";
-
 import { motion } from "framer-motion";
 
 const Banner = () => {
@@ -29,7 +23,7 @@ const Banner = () => {
           </motion.h1>
         </div>
         <div className="w-full bg-primary xs:px-[5%] lg:px-[7rem] lg:py-10 xs:py-5 grid lg:grid-cols-4 xs:grid-cols-1">
-          {[G1, G2, G3, G4].map((im, i) => (
+          {["/s_1.jpg", "/s_2.jpg", "/s_3.jpg", "/s_4.jpg"].map((im, i) => (
             <motion.div
               animate={{
                 y: [
@@ -46,7 +40,7 @@ const Banner = () => {
               key={i}
               className="h-[25rem]"
             >
-              <Image
+              <img
                 src={im}
                 alt="image"
                 className="h-full w-full object-cover"

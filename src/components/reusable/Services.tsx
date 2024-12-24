@@ -4,17 +4,8 @@ import React, { useRef, useState } from "react";
 
 import { motion, useInView } from "framer-motion";
 
-import Image, { StaticImageData } from "next/image";
-
-import I1 from "@/public/ambulance.svg";
-import I2 from "@/public/briefcase.svg";
-import I3 from "@/public/chat_bubble.svg";
-import I4 from "@/public/pregnant_woman.svg";
-import I5 from "@/public/magnifying_glass.svg";
-import I6 from "@/public/test_tubes.svg";
-
 interface iService {
-  image: StaticImageData;
+  image: string;
   title: string;
   description: string;
 }
@@ -29,37 +20,37 @@ const Services = () => {
 
   const services: iService[] = [
     {
-      image: I1,
+      image: "/ambulance.svg",
       title: "Accident and Emergency services",
       description:
         "We provide rapid assessment, treatment, and stabilization for acute injuries, trauma, or illnesses, ensuring life-saving care and timely referrals.",
     },
     {
-      image: I2,
+      image: "/briefcase.svg",
       title: "General and Family Medicine",
       description:
         "We offer comprehensive care to individuals and families, addressing everyday and chronic health needs, and their responses to treatment.",
     },
     {
-      image: I4,
+      image: "/pregnant_woman.svg",
       title: "Pregnancy and Delivery Services",
       description:
         "We provide fertility counseling, routine antenatal and postnatal care for low-risk mothers, and refer high-risk pregnancies when needed.",
     },
     {
-      image: I6,
+      image: "/test_tubes.svg",
       title: "Laboratory Services",
       description:
         "We offer laboratory services delivered by seasoned professionals, availing timely results to support evidence-based and effective treatments.",
     },
     {
-      image: I3,
+      image: "/chat_bubble.svg",
       title: "Medical Checkups and Counselling",
       description:
         "We offer walk-in checkups, group, and individual counseling to address concerns, provide expert guidance, and promote health.",
     },
     {
-      image: I5,
+      image: "/magnifying_glass.svg",
       title: "Screening Examinations",
       description:
         "We offer walk-in checkups, group, and individual counseling to address concerns, provide expert guidance, and promote health.",
@@ -105,7 +96,7 @@ const Services = () => {
                   hoverIndex === i ? "bg-primary" : "bg-white"
                 } rounded-xl shadow-custom p-4 flex flex-col gap-6 transition-colors duration-300 ease-out`}
               >
-                <Image
+                <img
                   src={s.image}
                   alt="service image"
                   className="size-[40px]"

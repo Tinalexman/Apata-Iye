@@ -37,7 +37,7 @@ export const useSendMail = () => {
     /* eslint-disable @typescript-eslint/no-explicit-any */
     try {
       await axios.post("https://mailer-xg4d.onrender.com/api/email", data);
-      toast.success("Your message has been sent successfully.");
+      toast.success("Your message has been delivered successfully.");
       setSuccess(true);
     } catch (error: any) {
       toast.error(

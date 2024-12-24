@@ -1,10 +1,8 @@
 "use client";
 
 import React from "react";
-
-import Image from "next/image";
-import A1 from "@/public/a_1.jpg";
 import { motion } from "framer-motion";
+
 const Banner = () => {
   return (
     <div className="lg:h-[calc(100vh-6rem)] xs:h-auto bg-[url('../../public/about_background.jpg')] w-full bg-cover bg-no-repeat">
@@ -24,7 +22,11 @@ const Banner = () => {
           </motion.h1>
         </div>
         <div className="w-full lg:h-[calc(100vh-14rem)] xs:h-[60vh] lg:px-0 xs:px-[5%]">
-          <Image src={A1} alt="about" className="w-full h-full object-cover" />
+          <img
+            src={"/a_1.jpg"}
+            alt="about"
+            className="w-full h-full object-cover"
+          />
         </div>
       </div>
     </div>

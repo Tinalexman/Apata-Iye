@@ -1,13 +1,6 @@
 "use client";
 import React, { useRef, FC } from "react";
 
-import Image from "next/image";
-
-import I1 from "@/public/img_1.jpg";
-import I2 from "@/public/img_2.jpg";
-import I3 from "@/public/img_3.jpg";
-import I4 from "@/public/img_4.jpg";
-
 import { motion, useInView } from "framer-motion";
 
 const Facilities: FC<{ useWhite?: boolean }> = ({ useWhite }) => {
@@ -40,32 +33,34 @@ const Facilities: FC<{ useWhite?: boolean }> = ({ useWhite }) => {
         </div>
       </div>
       <div className="w-full bg-primary grid xs:grid-cols-2 xs:gap-4 lg:gap-0 lg:grid-cols-4 lg:px-[7rem] xs:px-[5%] lg:py-10 xs:py-5">
-        {[I4, I3, I2, I1].map((im, i) => {
-          return (
-            <motion.div
-              key={i}
-              animate={{
-                y: !inView ? (i % 2 == 0 ? "-20%" : "20%") : "0%",
-              }}
-              transition={{
-                duration: 1,
-                ease: "easeOut",
-                delay: i * 0.15,
-                type: "spring",
-                bounce: 0.6,
-              }}
-              className={`w-full border border-white border-opacity-80 overflow-hidden ${
-                i === 0 ? "lg:rounded-l-xl" : i === 3 ? "lg:rounded-r-xl" : ""
-              } xs:rounded-md`}
-            >
-              <Image
-                src={im}
-                alt="facility image"
-                className="w-full lg:h-[20rem] xs:h-[200px] object-cover"
-              />
-            </motion.div>
-          );
-        })}
+        {["/img_4.jpg", "/img_3.jpg", "/img_2.jpg", "/img_1.jpg"].map(
+          (im, i) => {
+            return (
+              <motion.div
+                key={i}
+                animate={{
+                  y: !inView ? (i % 2 == 0 ? "-20%" : "20%") : "0%",
+                }}
+                transition={{
+                  duration: 1,
+                  ease: "easeOut",
+                  delay: i * 0.15,
+                  type: "spring",
+                  bounce: 0.6,
+                }}
+                className={`w-full border border-white border-opacity-80 overflow-hidden ${
+                  i === 0 ? "lg:rounded-l-xl" : i === 3 ? "lg:rounded-r-xl" : ""
+                } xs:rounded-md`}
+              >
+                <img
+                  src={im}
+                  alt="facility image"
+                  className="w-full lg:h-[20rem] xs:h-[200px] object-cover"
+                />
+              </motion.div>
+            );
+          }
+        )}
       </div>
     </div>
   );

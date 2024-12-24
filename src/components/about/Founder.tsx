@@ -2,9 +2,6 @@
 
 import React, { useRef } from "react";
 
-import Image from "next/image";
-import F1 from "@/public/founder.jpg";
-
 import { motion, useInView } from "framer-motion";
 
 const Founder = () => {
@@ -94,8 +91,8 @@ const Founder = () => {
           }}
           className="xs:hidden lg:block w-[37rem] h-[40rem] shadow-custom scale-[0.75] rounded-lg overflow-hidden absolute -top-5 right-[7rem]"
         >
-          <Image
-            src={F1}
+          <img
+            src={"/founder.jpg"}
             alt="founder"
             className="w-full h-full object-cover"
           />
@@ -111,8 +108,8 @@ const Founder = () => {
           }}
           className="xs:block lg:hidden mt-5 w-full h-[60vh] shadow-custom rounded-lg overflow-hidden "
         >
-          <Image
-            src={F1}
+          <img
+            src={"/founder.jpg"}
             alt="founder"
             className="w-full h-full object-cover"
           />

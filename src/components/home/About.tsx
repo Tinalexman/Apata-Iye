@@ -2,15 +2,6 @@
 
 import React, { useRef } from "react";
 
-import Image from "next/image";
-
-import I1 from "@/public/about_1.jpg";
-import I2 from "@/public/about_2.jpg";
-import I3 from "@/public/about_3.jpg";
-import I4 from "@/public/about_4.jpg";
-import I5 from "@/public/about_5.jpg";
-import I6 from "@/public/about_6.jpg";
-
 import { motion, useInView } from "framer-motion";
 
 const About = () => {
@@ -24,27 +15,29 @@ const About = () => {
       className="w-full flex lg:flex-row xs:flex-col-reverse justify-between xs:gap-10 lg:gap-0 lg:px-[7rem] xs:px-[5%] bg-primary xs:py-5 lg:pt-14 lg:pb-20 font-lato"
     >
       <div className="xs:w-full lg:w-[40%] xs:h-auto lg:h-[500px] relative">
-        <Image
-          src={I1}
+        <img
+          src={"/about_1.jpg"}
           alt="about us"
           className="lg:w-[305px] xs:w-[70%] xs:h-auto lg:h-[430px] border-4 border-[#60A5FA] rounded-md "
         />
-        <Image
-          src={I2}
+        <img
+          src={"/about_2.jpg"}
           alt="about us"
           className="lg:w-[250px] xs:w-[50%] xs:h-auto lg:h-[380px] border-4 border-[#60A5FA] rounded-md z-1 absolute bottom-5 right-0"
         />
         <div className="absolute z-2 grid grid-cols-4 gap-2 bottom-0 left-5 right-0">
-          {[I3, I4, I5, I6].map((im, i) => {
-            return (
-              <Image
-                key={i}
-                src={im}
-                alt="about us"
-                className="lg:size-[120px] xs:size-[70px] object-cover border-[3px] border-[#60A5FA] rounded-md"
-              />
-            );
-          })}
+          {["/about_3.jpg", "/about_4.jpg", "/about_5.jpg", "/about_6.jpg"].map(
+            (im, i) => {
+              return (
+                <img
+                  key={i}
+                  src={im}
+                  alt="about us"
+                  className="lg:size-[120px] xs:size-[70px] object-cover border-[3px] border-[#60A5FA] rounded-md"
+                />
+              );
+            }
+          )}
         </div>
       </div>
       <div className="lg:w-[45%] xs:w-full flex flex-col xs:items-center lg:items-start gap-4">
