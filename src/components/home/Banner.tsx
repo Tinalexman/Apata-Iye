@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const Banner = () => {
   return (
@@ -67,7 +68,7 @@ const Banner = () => {
               .
             </motion.p>
           </div>
-          <motion.button
+          <motion.div
             animate={{
               y: ["50%", "0%"],
             }}
@@ -76,11 +77,15 @@ const Banner = () => {
               ease: "easeOut",
               delay: 0.5,
             }}
-            onClick={() => window.location.assign("/book-appointment")}
-            className="lg:mt-3 xs:mt-10 lg:h-12 xs:h-10 xs:font-bold bg-primary hover:bg-[#2C4D9A] rounded-[16px] hover:font-bold transition-all duration-300 ease-out font-lato text-white lg:w-[20rem] xs:w-full font-medium"
+            className="lg:mt-3 xs:mt-10"
           >
-            BOOK AN APPOINTMENT
-          </motion.button>
+            <Link
+              href={"/book-appointment"}
+              className="xs:font-bold bg-primary hover:bg-[#2C4D9A] rounded-[16px] hover:font-bold transition-all duration-300 ease-out font-lato text-white w-full font-medium lg:w-[25rem] lg:px-[5rem] lg:py-3 xs:w-full xs:py-1.5 xs:px-[2.5rem] block"
+            >
+              BOOK AN APPOINTMENT
+            </Link>
+          </motion.div>
         </div>
         <div className="lg:w-[30rem] xs:w-full h-auto relative xs:mt-14 lg:mt-0">
           <img

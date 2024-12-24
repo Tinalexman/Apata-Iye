@@ -111,9 +111,9 @@ const Navbar: FC<{ active?: number }> = ({ active = 0 }) => {
 
           <div className="w-full flex flex-col gap-5 mt-32">
             {navs.map((nv, i) => (
-              <div
+              <Link
                 key={i}
-                onClick={() => window.location.assign(nv.link)}
+                href={nv.link}
                 className={`${
                   active === i
                     ? "text-sh-2 font-bold"
@@ -121,7 +121,7 @@ const Navbar: FC<{ active?: number }> = ({ active = 0 }) => {
                 } text-[0.9rem]`}
               >
                 {nv.name}
-              </div>
+              </Link>
             ))}
           </div>
         </div>
